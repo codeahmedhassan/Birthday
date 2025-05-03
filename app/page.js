@@ -11,12 +11,12 @@ export default function BirthdayWish() {
   const [timeLeft, setTimeLeft] = useState({});
 
   useEffect(() => {
-    const targetDate = moment().add(1, 'days').startOf('day'); // Set to next day
+    const targetDate = moment().add(1, 'days').startOf('day');
     const timer = setInterval(() => {
       const now = moment();
       const diff = targetDate.diff(now);
       const duration = moment.duration(diff);
-      
+
       setTimeLeft({
         hours: duration.hours(),
         minutes: duration.minutes(),
@@ -29,11 +29,10 @@ export default function BirthdayWish() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-500 via-pink-500 to-red-500 py-8">
-      {/* Main Card */}
       <div className="max-w-4xl mx-4 md:mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden">
         {/* Hero Section */}
         <div className="relative h-64 md:h-80 bg-purple-600 flex items-center justify-center">
-          <div className="absolute inset-0 bg-opacity-50 bg-black" />
+          <div className="absolute inset-0 bg-black bg-opacity-50" />
           <div className="relative z-10 text-center space-y-4 px-4">
             <div className="animate-float">
               <FaBirthdayCake className="mx-auto h-16 w-16 text-yellow-300" />
@@ -45,16 +44,14 @@ export default function BirthdayWish() {
         </div>
 
         {/* Content Section */}
-        <div className="grid md:grid-cols-2 gap-8 p-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-4 sm:p-8">
           {/* Photo Gallery */}
           <div className="space-y-4">
             <div className="relative h-48 rounded-2xl overflow-hidden">
               <img
                 src="https://t4.ftcdn.net/jpg/02/66/72/41/360_F_266724172_Iy8gdKgMa7XmrhYYxLCxyhx6J7070Pr8.jpg"
                 alt="Friends"
-                layout="fill"
-                objectFit="cover"
-                className="transform hover:scale-105 transition-all"
+                className="w-full h-full object-cover transform hover:scale-105 transition-all"
               />
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -62,24 +59,20 @@ export default function BirthdayWish() {
                 <img
                   src="https://t3.ftcdn.net/jpg/02/36/99/22/360_F_236992283_sNOxCVQeFLd5pdqaKGh8DRGMZy7P4XKm.jpg"
                   alt="Friends"
-                  layout="fill"
-                  objectFit="cover"
-                  className="transform hover:scale-105 transition-all"
+                  className="w-full h-full object-cover transform hover:scale-105 transition-all"
                 />
               </div>
               <div className="relative h-32 rounded-xl overflow-hidden">
                 <img
                   src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                   alt="Friends"
-                  layout="fill"
-                  objectFit="cover"
-                  className="transform hover:scale-105 transition-all"
+                  className="w-full h-full object-cover transform hover:scale-105 transition-all"
                 />
               </div>
             </div>
           </div>
 
-          {/* Message Section */}
+          {/* Message & Countdown Section */}
           <div className="space-y-6">
             <div className="bg-pink-50 p-6 rounded-2xl">
               <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
@@ -87,9 +80,9 @@ export default function BirthdayWish() {
                 Birthday Wishes
               </h2>
               <p className="text-gray-600 leading-relaxed">
-                Dear Sarah,<br />
-                On your special day, I want to celebrate the amazing person you are! 
-                Your kindness, laughter, and friendship light up every room. 
+                Dear Hassan,<br />
+                On your special day, I want to celebrate the amazing person you are!
+                Your kindness, laughter, and friendship light up every room.
                 May this year bring you endless joy and wonderful adventures! 🎉
               </p>
             </div>
@@ -122,15 +115,15 @@ export default function BirthdayWish() {
                 <FaHeart className="mr-2 text-red-500" />
                 Send Your Wish
               </h3>
-              <div className="flex gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <input
                   type="text"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Write a personal message..."
-                  className="flex-1 px-4 py-2 rounded-lg border focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="flex-1 px-4 text-black py-2 rounded-lg border focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                 />
-                <button className="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors flex items-center">
+                <button className="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors flex items-center justify-center">
                   <FiSend className="mr-2" /> Send
                 </button>
               </div>
