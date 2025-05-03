@@ -39,7 +39,7 @@ export default function BirthdayWish() {
               <FaBirthdayCake className="mx-auto h-16 w-16 text-yellow-300" />
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-white">
-              Happy Birthday, <span className="text-yellow-300">Sarah!</span>
+              Happy Birthday, <span className="text-yellow-300">Hassan!</span>
             </h1>
           </div>
         </div>
